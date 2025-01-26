@@ -2,7 +2,8 @@ html,
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures consistent box-sizing across elements */
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
@@ -21,23 +22,33 @@ header {
 
 header nav {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
     gap: 40px;
-    align-items: flex-start;
     height: 80px;
+    background-color: rgb(81, 40, 122);
 }
 
-#logo-img {
-    padding-top: 10px;
-    padding-left: 10px;
+nav {
+    padding: 10px;
+}
+
+nav img {
+    border-radius: 50%;
+}
+
+#branding {
+    display: flex;
+    align-items: center;
+}
+
+#branding h1 {
+    padding-left: 20px;
 }
 
 #btn-home {
-    /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
-    text-align: left;
     font-size: 1.5rem;
     line-height: 1.3rem;
-    font-style: italic;
 }
 
 header nav button {
@@ -45,6 +56,12 @@ header nav button {
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
+}
+
+.active {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    font-weight: bold;
 }
 
 div#content {
@@ -59,10 +76,15 @@ div#content {
     padding: 10px;
 }
 
-#btn-menu,
-#btn-about,
-#btn-home {
-    align-self: center;
+.divTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+.divTitle p {
+    font-size: 22px;
 }
 
 /* Menu styling */
@@ -127,4 +149,5 @@ footer {
     text-align: center; /* Center the text */
     padding: 20px 0; /* Add space around the content */
     margin-top: auto; /* Push it to the bottom of the page if needed */
+    position: sticky;
 }

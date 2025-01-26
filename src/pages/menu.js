@@ -1,11 +1,32 @@
 import { divContent } from "./home";
 import img from "../images/chaotic-moo-dang.jpg";
 
+const container = document.createElement("div");
+
 const imgHome = new Image();
 imgHome.src = img;
 imgHome.style.cssText = "max-width: 70%; height: auto; border-radius: 20px;";
 
-function createEl(h1, description, img) {
+const createMenuPage = () => {
+    divContent.replaceChildren();
+    createMenuSection();
+};
+
+const createMenuSection = () => {
+    const menuSection = document.createElement("section");
+    menuSection.id = "menuSection";
+
+    createDish("Test Menu Item 1", "This is a test", img);
+    createDish("Test Menu Item 2", "This is a test", img);
+    createDish("Test Menu Item 3", "This is a test", img);
+    createDish("Test Menu Item 4", "This is a test", img);
+    createDish("Test Menu Item 5", "This is a test", img);
+
+    menuSection.appendChild(container);
+    divContent.appendChild(menuSection);
+};
+
+function createDish(h1, description, img) {
     const menuImage = new Image();
     menuImage.src = img;
 
@@ -27,10 +48,4 @@ function createEl(h1, description, img) {
     menuItemInformation.appendChild(menuItemDescription);
 }
 
-export function menu() {
-    divContent.innerHTML = "";
-
-    createEl("Test Menu Item 1", "This is a test", img);
-    createEl("Test Menu Item 2", "This is a test", img);
-    createEl("Test Menu Item 3", "This is a test", img);
-}
+export default createMenuPage;
